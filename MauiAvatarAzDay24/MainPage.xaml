@@ -9,8 +9,13 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackLayout Grid.Row="0">
-            <Entry x:Name="entrySentence"></Entry>
-            <Button x:Name="buttonSpeak" Clicked="buttonSpeak_Clicked" Text="Speak from MAUI!!"></Button>
+            <Entry Placeholder="Spoken text" x:Name="entrySentence"></Entry>
+            <StackLayout Orientation="Horizontal" Margin="3" HorizontalOptions="Center">
+                <Button x:Name="buttonStartSession" Clicked="buttonStartSession_Clicked" Text="Start session" Margin="3"></Button>
+                <Button x:Name="buttonSpeak" Clicked="buttonSpeak_Clicked" Text="Speak" Margin="3"></Button>
+                <Button x:Name="buttonStopSpeaking" Clicked="buttonStopSpeaking_Clicked"      Text="Stop speak" Margin="3"></Button>
+                <Button x:Name="buttonStopSession" Clicked="buttonStopSession_Clicked" Text="Stop session" Margin="3" ></Button>
+            </StackLayout>
         </StackLayout>
         <WebView Grid.Row="1" x:Name="webViewAvatar" Source="basic.html" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand">
                 

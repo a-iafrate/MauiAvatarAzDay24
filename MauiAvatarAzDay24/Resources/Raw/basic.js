@@ -248,33 +248,6 @@ window.startSession = () => {
     
 }
 
-window.speakMaui = (spokenText) => {
-    document.getElementById('speak').disabled = true;
-    document.getElementById('stopSpeaking').disabled = false
-    document.getElementById('audio').muted = false
-    let ttsVoice = document.getElementById('ttsVoice').value
-    let personalVoiceSpeakerProfileID = document.getElementById('personalVoiceSpeakerProfileID').value
-    let spokenSsml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='http://www.w3.org/2001/mstts' xml:lang='en-US'><voice name='${ttsVoice}'><mstts:ttsembedding speakerProfileId='${personalVoiceSpeakerProfileID}'><mstts:leadingsilence-exact value='0'/>${htmlEncode(spokenText)}</mstts:ttsembedding></voice></speak>`
-    console.log("[" + (new Date()).toISOString() + "] Speak request sent.")
-    avatarSynthesizer.speakSsmlAsync(spokenSsml).then(
-        (result) => {
-            document.getElementById('speak').disabled = false
-            document.getElementById('stopSpeaking').disabled = true
-            if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
-                console.log("[" + (new Date()).toISOString() + "] Speech synthesized to speaker for text [ " + spokenText + " ]. Result ID: " + result.resultId)
-            } else {
-                console.log("[" + (new Date()).toISOString() + "] Unable to speak text. Result ID: " + result.resultId)
-                if (result.reason === SpeechSDK.ResultReason.Canceled) {
-                    let cancellationDetails = SpeechSDK.CancellationDetails.fromResult(result)
-                    console.log(cancellationDetails.reason)
-                    if (cancellationDetails.reason === SpeechSDK.CancellationReason.Error) {
-                        console.log(cancellationDetails.errorDetails)
-                    }
-                }
-            }
-        }).catch(log);
-}
-
 window.speak = () => {
     document.getElementById('speak').disabled = true;
     document.getElementById('stopSpeaking').disabled = false

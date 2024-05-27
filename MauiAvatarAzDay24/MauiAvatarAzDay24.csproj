@@ -67,12 +67,19 @@
 	<ItemGroup>
 	  <None Remove="Resources\raw\basic.html" />
 	  <None Remove="Resources\raw\basic.js" />
+	  <None Remove="Resources\Raw\basicMaui.js" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\basicMaui.js">
+	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	  </MauiAsset>
 	</ItemGroup>
 
 </Project>

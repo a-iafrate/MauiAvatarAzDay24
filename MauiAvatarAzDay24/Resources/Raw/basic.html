@@ -5,8 +5,8 @@
     <title>Talking Avatar Service Demo</title>
     <link href="styles.css" rel="stylesheet">
     <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
-    <script src="basic.js"></script>
-    <script src="basicMaui.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/basicMaui.js"></script>
 </head>
 <body>
     <div style="visibility:hidden;height:0px">
@@ -75,7 +75,10 @@
                 <p id="overlayText" style="font-size: large;">Live Video</p>
                 <!-- <img id="overlayImage" src="your-image-source.png" alt="Overlay Image"> -->
             </div>
-            <div id="remoteVideo"></div>
+            <div id="localVideo" hidden>
+                <video src="video/lisa-casual-sitting-idle.mp4" autoplay loop muted></video>
+            </div>
+            <div id="remoteVideo" hidden></div>
             <canvas id="canvas" width="400" height="1080" style="background-color: transparent;" hidden="hidden"></canvas>
             <canvas id="tmpCanvas" width="400" height="1080" hidden="hidden"></canvas>
         </div>

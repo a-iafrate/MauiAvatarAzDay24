@@ -3,7 +3,7 @@
     public partial class MainPage : ContentPage
     {
         public static string Region = "westeurope";
-        public static string Key = "";
+        public static string Key = "7a2153d3accf4d6594ab135499f38dfc";
         int count = 0;
 
         public MainPage()

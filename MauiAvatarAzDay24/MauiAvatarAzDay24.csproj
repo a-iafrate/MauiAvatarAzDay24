@@ -68,6 +68,10 @@
 	  <None Remove="Resources\raw\basic.html" />
 	  <None Remove="Resources\raw\basic.js" />
 	  <None Remove="Resources\Raw\basicMaui.js" />
+	  <None Remove="Resources\Raw\basic_old.html" />
+	  <None Remove="Resources\Raw\basic_old.js" />
+	  <None Remove="Resources\Raw\chat.js" />
+	  <None Remove="Resources\Raw\lisa-casual-sitting-idle.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -77,7 +81,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\basicMaui.js">
+	  <MauiAsset Update="Resources\Raw\js\basic_old.js">
+	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\basic_old.html">
+	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\js\basicMaui.js">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
 	  </MauiAsset>
 	</ItemGroup>
